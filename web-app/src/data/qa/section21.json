@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why use `generateStaticParams` for the blog post pages instead of rendering them dynamically on every request?",
+    "answer": "Because blog content changes infrequently compared to how often it's read — pre-rendering every post at build time serves cached static HTML instantly, while dynamic rendering would redo the same fetch and render work on every single visit for no benefit."
+  },
+  {
+    "question": "What would happen if `generateMetadata` were omitted and only a static `metadata` object were used instead?",
+    "answer": "Every blog post would show the same generic title and description in search results and social previews, since a static `metadata` object has no access to the current post's data — defeating the purpose of per-post SEO."
+  }
+]

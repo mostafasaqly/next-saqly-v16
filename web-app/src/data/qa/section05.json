@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Why must `params` be awaited in current Next.js instead of accessed directly?",
+    "answer": "Next.js changed route parameter APIs to be asynchronous so the framework can defer resolving them until actually needed, which enables more flexible rendering/caching behavior — TypeScript enforces this by typing `params` as a `Promise`."
+  },
+  {
+    "question": "When would you store UI state in the URL via search params instead of `useState`?",
+    "answer": "When that state should be shareable or bookmarkable — like active filters, the selected tab, or a search query — since URL state survives page reloads and can be copy-pasted to someone else."
+  },
+  {
+    "question": "What's the difference between `[...slug]` and `[[...slug]]`?",
+    "answer": "`[...slug]` is a required catch-all that needs at least one segment after the parent path; `[[...slug]]` is optional, so the parent path alone also matches, with `slug` being `undefined` in that case."
+  }
+]

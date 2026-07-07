@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why is a Prisma client singleton necessary in development but less of a concern in production?",
+    "answer": "Next.js hot-reloading in development re-executes modules on every file change, which would create a new `PrismaClient` (and new database connections) each time without a singleton guard — production builds don't hot-reload, so this specific issue doesn't occur there, though a singleton is still good practice."
+  },
+  {
+    "question": "What is the N+1 query problem, and how does `include` solve it?",
+    "answer": "It's when fetching a list triggers one additional query per item to get related data (e.g., one query per post to fetch its author), multiplying database round trips. `include` tells Prisma to fetch the related data as part of the original query, reducing N+1 queries to just one."
+  }
+]

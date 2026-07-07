@@ -1,0 +1,10 @@
+[
+  {
+    "question": "What is the main difference between React and Next.js?",
+    "answer": "React is a UI library for building components; Next.js is a full-stack framework built on React that adds routing, rendering strategies, data-fetching conventions, and production tooling."
+  },
+  {
+    "question": "Why might a team choose Next.js over plain React + a router?",
+    "answer": "Because Next.js provides file-based routing, server rendering, image/font optimization, and backend capabilities (Route Handlers, Server Actions) out of the box, removing the need to assemble and maintain that infrastructure separately."
+  }
+]

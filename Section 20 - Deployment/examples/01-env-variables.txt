@@ -1,0 +1,12 @@
+.env.local (never committed to git)
+
+DATABASE_URL="postgresql://user:pass@host:5432/db"
+SESSION_SECRET="a-long-random-string"
+
+# Prefixing with NEXT_PUBLIC_ exposes a variable to the BROWSER bundle.
+# Only use this prefix for values safe to expose publicly (never secrets).
+NEXT_PUBLIC_ANALYTICS_ID="UA-XXXXXXX"
+
+Usage:
+  process.env.DATABASE_URL              — server-only, safe for secrets
+  process.env.NEXT_PUBLIC_ANALYTICS_ID  — inlined into client JS at build time

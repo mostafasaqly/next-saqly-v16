@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why is URL state (search params) often preferable to `useState` for filters and tabs?",
+    "answer": "Because URL state survives page reloads and can be copied, bookmarked, or shared with someone else and reproduce the exact same view — `useState` resets the moment the page reloads and can't be shared as a link."
+  },
+  {
+    "question": "When would Zustand be a better choice than the Context API for shared client state?",
+    "answer": "When the shared state updates frequently and is read by many components, since Context re-renders every consumer on any change to the provided value, while Zustand lets components subscribe to only the specific slice of state they need, avoiding unnecessary re-renders."
+  }
+]

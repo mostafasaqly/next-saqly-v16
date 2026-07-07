@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Why must `error.tsx` be a Client Component?",
+    "answer": "Error boundaries rely on React lifecycle methods (`getDerivedStateFromError`/`componentDidCatch`-equivalent behavior) that only exist in the client rendering runtime — Server Components have no such mechanism since they don't re-render in the browser."
+  },
+  {
+    "question": "Why doesn't a route's `error.tsx` automatically catch an error thrown inside a Server Action called from that route?",
+    "answer": "Server Actions execute as server-side function calls outside of the React component tree that the error boundary wraps — the boundary only catches errors thrown during rendering, so Server Action errors must be caught explicitly with try/catch and returned as state."
+  },
+  {
+    "question": "When would `notFound()` be more appropriate than throwing a generic error?",
+    "answer": "When the route itself is valid but the specific resource being requested doesn't exist — like a deleted blog post — since `notFound()` renders a proper 404 UI instead of triggering the generic error boundary meant for unexpected failures."
+  }
+]

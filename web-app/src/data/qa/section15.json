@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why should proxy logic be kept as lightweight as possible?",
+    "answer": "Because it runs on every request matching its `matcher` config, adding latency to every one of those requests — slow logic here (like an unindexed database call) degrades performance across the whole matched section of the app."
+  },
+  {
+    "question": "What's the practical difference between renaming `middleware.ts` to `proxy.ts`?",
+    "answer": "None functionally — it's the same mechanism with a clearer name and a renamed exported function (`proxy` instead of `middleware`); the `NextRequest`/`NextResponse` APIs and `matcher` config work identically."
+  }
+]

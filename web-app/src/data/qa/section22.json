@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why gate the dashboard with a single `proxy.ts` matcher instead of checking auth inside every individual dashboard page?",
+    "answer": "Centralizing the check in the proxy means every current and future route under `/dashboard/*` is automatically protected — checking inside each page individually is repetitive and easy to forget on a newly added route."
+  },
+  {
+    "question": "Why store the customer table's search query and page number in the URL instead of component state?",
+    "answer": "So the exact filtered/paginated view can be bookmarked, shared, or reloaded without losing its state — component state would reset to the default view on every page reload."
+  }
+]

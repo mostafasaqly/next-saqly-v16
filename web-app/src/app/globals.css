@@ -1,0 +1,140 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+:root[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.prose :where(h2, h3) {
+  scroll-margin-top: 5rem;
+}
+
+/* ── Tables (wrapped for horizontal scroll, styled independently of Typography) ── */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+.prose table thead {
+  background: rgba(59, 130, 246, 0.1);
+}
+.prose table th,
+.prose table td {
+  padding: 0.6rem 1rem;
+  text-align: start;
+  border-bottom: 1px solid rgba(115, 115, 115, 0.25);
+}
+.prose table th {
+  font-weight: 600;
+  color: inherit;
+}
+.prose table tr:last-child td {
+  border-bottom: none;
+}
+.prose table tbody tr:hover {
+  background: rgba(115, 115, 115, 0.06);
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-cairo), Cairo, system-ui, sans-serif;
+}
+
+/* ── JS/TS/JSX syntax tokens ── */
+.tok-keyword  { color: #ff7b72; }
+.tok-builtin  { color: #d2a8ff; }
+.tok-string   { color: #a5d6ff; }
+.tok-comment  { color: #6e7681; font-style: italic; }
+.tok-number   { color: #79c0ff; }
+.tok-tag      { color: #7ee787; }
+.tok-attr     { color: #ffa657; }
+.tok-fn       { color: #e6edf3; }
+.tok-punct    { color: #8b949e; }
+.tok-plain    { color: #e6edf3; }
+
+/* ── Shell / terminal tokens ── */
+.tok-sh-cmd    { color: #7ee787; font-weight: 700; }
+.tok-sh-sub    { color: #ffa657; font-weight: 600; }
+.tok-sh-pkg    { color: #f0e68c; }
+.tok-sh-flag   { color: #79c0ff; }
+.tok-sh-prompt { color: #6e7681; user-select: none; }
+
+/* ── Themed scrollbars (sidebar + scrollable panes) ── */
+#sidebar,
+#main-content {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d4 transparent;
+}
+:root[data-theme="dark"] #sidebar,
+:root[data-theme="dark"] #main-content {
+  scrollbar-color: #3f3f46 transparent;
+}
+#sidebar::-webkit-scrollbar,
+#main-content::-webkit-scrollbar {
+  width: 10px;
+}
+#sidebar::-webkit-scrollbar-track,
+#main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+#sidebar::-webkit-scrollbar-thumb,
+#main-content::-webkit-scrollbar-thumb {
+  background-color: #d4d4d4;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+:root[data-theme="dark"] #sidebar::-webkit-scrollbar-thumb,
+:root[data-theme="dark"] #main-content::-webkit-scrollbar-thumb {
+  background-color: #3f3f46;
+}
+#sidebar::-webkit-scrollbar-thumb:hover,
+#main-content::-webkit-scrollbar-thumb:hover {
+  background-color: #a3a3a3;
+}
+:root[data-theme="dark"] #sidebar::-webkit-scrollbar-thumb:hover,
+:root[data-theme="dark"] #main-content::-webkit-scrollbar-thumb:hover {
+  background-color: #52525b;
+}
+
+/* ── Callouts (tip / warning) ── */
+.callout {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin: 18px 0;
+  font-size: 16px;
+}
+.callout__icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.callout--tip {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+.callout--warning {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}

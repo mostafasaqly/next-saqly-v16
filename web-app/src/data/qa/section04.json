@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Why is the root layout special compared to nested layouts?",
+    "answer": "It's the only layout allowed to render `<html>` and `<body>`, since a document can only have one of each — nested layouts just return ordinary JSX that composes inside it."
+  },
+  {
+    "question": "When would you use `template.tsx` instead of `layout.tsx`?",
+    "answer": "When you need the wrapper to re-mount on every navigation — for exit/enter animations or to reset local component state each time the user visits, which `layout.tsx` won't do since it persists across navigations."
+  },
+  {
+    "question": "What's the difference between the default 404 behavior and calling `notFound()` manually?",
+    "answer": "The default `not-found.tsx` renders automatically for URLs that don't match any route. Calling `notFound()` inside a page triggers that same UI on demand — useful when the *route* matches (e.g. `/products/123`) but the underlying data doesn't exist."
+  }
+]

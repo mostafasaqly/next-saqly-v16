@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why can't a folder have both `page.tsx` and `route.ts` for the same path segment?",
+    "answer": "Because both would try to define what happens when that exact path is requested — Next.js requires one or the other so there's no ambiguity about whether a request should render UI or return an API response."
+  },
+  {
+    "question": "When would you choose a Route Handler over a Server Action for a mutation?",
+    "answer": "When the mutation needs to be callable from outside your own React UI — a mobile app, a third-party webhook, or another service — since Route Handlers expose a standard HTTP endpoint that any client can call, while Server Actions are invoked through React's own mechanisms."
+  }
+]

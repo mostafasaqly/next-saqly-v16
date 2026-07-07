@@ -1,0 +1,14 @@
+Catch-all vs. optional catch-all routes
+
+app/docs/[...slug]/page.tsx
+  matches:   /docs/a
+             /docs/a/b
+             /docs/a/b/c
+  does NOT match: /docs   (no segment at all)
+  params.slug is always an array: ["a", "b", "c"]
+
+app/docs/[[...slug]]/page.tsx   (double brackets = optional)
+  matches:   /docs
+             /docs/a
+             /docs/a/b
+  params.slug is undefined for /docs, or an array otherwise

@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Why is server-side validation required even if the form already validates on the client?",
+    "answer": "Because a Server Action can be invoked directly, bypassing the UI entirely — client-side validation only improves UX, it provides no actual security or data-integrity guarantee."
+  },
+  {
+    "question": "What's the difference between `useActionState` and `useFormStatus`?",
+    "answer": "`useActionState` wraps a specific action and exposes its returned state plus a pending flag, typically used in the component that owns the form. `useFormStatus` reads pending status from the nearest ancestor `<form>` and is meant for reusable child components (like a submit button) that don't own the form themselves."
+  },
+  {
+    "question": "Why call `revalidatePath` inside the Server Action instead of after the form submission on the client?",
+    "answer": "Because the action runs on the server right where the mutation happens — calling revalidation there guarantees the cache is invalidated as part of the same request, before the client even sees the response, rather than relying on a separate client-side step that could be skipped or delayed."
+  }
+]

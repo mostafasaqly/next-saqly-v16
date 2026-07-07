@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why should a secret like `DATABASE_URL` never be prefixed with `NEXT_PUBLIC_`?",
+    "answer": "Because that prefix tells Next.js to inline the variable's value directly into the client-side JavaScript bundle at build time, making it visible to anyone who inspects the page source — secrets must stay server-only."
+  },
+  {
+    "question": "What does `output: \"standalone\"` in `next.config.ts` change about the build?",
+    "answer": "It produces a minimal, self-contained server bundle (with only the dependencies actually used, plus a small Node server) instead of a build that expects a full `node_modules` install — ideal for keeping Docker images small."
+  }
+]

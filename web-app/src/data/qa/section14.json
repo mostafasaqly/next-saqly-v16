@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Why is `httpOnly: true` important for a session cookie?",
+    "answer": "It prevents the cookie from being read by client-side JavaScript, so even if an attacker injects a script via XSS, they can't steal the session token directly from `document.cookie`."
+  },
+  {
+    "question": "Why can Server Components read cookies but not set them?",
+    "answer": "Setting a cookie requires sending a `Set-Cookie` HTTP header, which must happen as part of a response being constructed — Server Actions and Route Handlers control that response directly, while Server Components only produce rendered output within an already-in-flight response."
+  },
+  {
+    "question": "Why hash passwords instead of encrypting them?",
+    "answer": "Hashing is one-way — even if the database is compromised, the original password can't be recovered from the hash. Encryption is reversible and would let anyone with the decryption key read the real passwords, which is never necessary for authentication."
+  }
+]

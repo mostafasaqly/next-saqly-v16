@@ -1,0 +1,14 @@
+[
+  {
+    "question": "What's the difference between `cache: \"no-store\"` and `next: { revalidate: 60 }`?",
+    "answer": "`no-store` never caches — every request hits the network fresh, making the route dynamic. `revalidate: 60` caches the response but treats it as stale after 60 seconds, refetching in the background on the next request after that window."
+  },
+  {
+    "question": "Why is `Promise.all` preferred over two separate `await` statements for independent requests?",
+    "answer": "Separate sequential awaits create a waterfall where the second request doesn't start until the first resolves, doubling the wait time; `Promise.all` starts both requests immediately so the total time is just the slower of the two."
+  },
+  {
+    "question": "Why doesn't calling the same shared fetch function from two different components cause two network requests?",
+    "answer": "Next.js automatically deduplicates `fetch()` calls with identical URLs and options within a single render pass (Request Memoization), so multiple components can safely call the same data-fetching function without duplicating work."
+  }
+]

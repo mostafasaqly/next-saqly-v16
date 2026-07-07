@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why generate `sitemap.xml` dynamically instead of writing a static file?",
+    "answer": "Because a site with dynamic content (like blog posts) has URLs that change over time — a `sitemap.ts` file can query the database and include every current post, whereas a static file would immediately go stale as content is added or removed."
+  },
+  {
+    "question": "Why is `dangerouslySetInnerHTML` considered safe for JSON-LD structured data specifically?",
+    "answer": "Because the content being injected is a JSON object you constructed from known, controlled fields — the risk `dangerouslySetInnerHTML` normally guards against is injecting unsanitized *user-supplied* HTML/script, which isn't happening here as long as none of the JSON-LD fields come directly from unescaped user input."
+  }
+]

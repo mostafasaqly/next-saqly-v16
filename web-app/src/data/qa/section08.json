@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why does `next/image` require remote domains to be whitelisted in `next.config.ts`?",
+    "answer": "To prevent the app from being used to optimize and proxy arbitrary external images, which could be a resource-abuse or security vector — explicitly listing trusted hosts closes that gap."
+  },
+  {
+    "question": "When would you use `generateMetadata` instead of a static `metadata` export?",
+    "answer": "When the title/description/OG data depends on route params or fetched content — like a blog post's title — since a static `metadata` object has no way to read the current route's dynamic data."
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Why does only a file named `page.tsx` become a route, and not every file in that folder?",
+    "answer": "Because the App Router lets you colocate components, helpers, and other non-route files right next to the page that uses them — only files matching the special `page` convention are exposed as URLs."
+  },
+  {
+    "question": "What happens if you add `useState` to a component without `\"use client\"`?",
+    "answer": "It errors at build/runtime — Server Components never execute in the browser, so there's no mechanism to hold React state or re-render in response to it. `\"use client\"` is required for any component using state, effects, or event handlers."
+  },
+  {
+    "question": "Why should `\"use client\"` be placed as far down the component tree as possible?",
+    "answer": "Because everything a Client Component imports also becomes part of the client bundle. Marking a whole page as client just for one interactive button forces unrelated static content to ship as JS unnecessarily."
+  }
+]

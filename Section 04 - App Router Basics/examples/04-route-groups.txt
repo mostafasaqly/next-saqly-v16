@@ -1,0 +1,16 @@
+Route groups — parentheses folders are stripped from the URL
+
+app/
+├── (marketing)/
+│   ├── layout.tsx        ← layout only for marketing pages
+│   ├── page.tsx           →  /
+│   └── about/
+│       └── page.tsx        →  /about
+└── (app)/
+    ├── layout.tsx        ← different layout for app pages
+    └── dashboard/
+        └── page.tsx        →  /dashboard
+
+Note: "(marketing)" and "(app)" do NOT appear in the URL.
+Use route groups to give different sections of your site distinct
+layouts/chrome without affecting the path.

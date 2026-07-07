@@ -1,0 +1,14 @@
+[
+  {
+    "question": "What's the difference between Request Memoization and the Data Cache?",
+    "answer": "Request Memoization deduplicates identical `fetch()` calls only within a single render pass and clears at the end of that request; the Data Cache persists `fetch()` results across requests and even deployments until explicitly revalidated."
+  },
+  {
+    "question": "When should you use `revalidateTag` instead of `revalidatePath`?",
+    "answer": "When the same underlying data appears on more than one route — tagging the fetch once and calling `revalidateTag` invalidates it everywhere, whereas `revalidatePath` would need to be called once per affected route."
+  },
+  {
+    "question": "What causes a route to switch from static to dynamic rendering?",
+    "answer": "Reading any request-specific data — `cookies()`, `headers()`, `searchParams`, or a `fetch` call using `cache: \"no-store\"` — forces Next.js to render that route fresh on every request instead of serving cached static HTML."
+  }
+]

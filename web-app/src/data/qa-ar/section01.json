@@ -1,0 +1,10 @@
+[
+  {
+    "question": "ما الفرق الرئيسي بين React و Next.js؟",
+    "answer": "React هي مكتبة واجهة مستخدم (UI) لبناء المكونات، بينما Next.js هو إطار عمل متكامل (full-stack) مبني على React يضيف التوجيه (routing)، واستراتيجيات العرض (rendering strategies)، وقواعد جلب البيانات (data-fetching conventions)، وأدوات الإنتاج (production tooling)."
+  },
+  {
+    "question": "لماذا قد يختار فريق ما Next.js بدلاً من React عادي مع موجّه (router) منفصل؟",
+    "answer": "لأن Next.js يوفّر التوجيه المبني على الملفات (file-based routing)، والعرض من جهة الخادم (server rendering)، وتحسين الصور والخطوط (image/font optimization)، وقدرات الواجهة الخلفية (Route Handlers، Server Actions) جاهزة مباشرة، مما يلغي الحاجة لتجميع وصيانة هذه البنية التحتية بشكل منفصل."
+  }
+]

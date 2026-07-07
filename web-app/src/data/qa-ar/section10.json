@@ -1,0 +1,14 @@
+[
+  {
+    "question": "ما الفرق بين Request Memoization و Data Cache؟",
+    "answer": "تقوم Request Memoization بإزالة تكرار استدعاءات `fetch()` المتطابقة فقط ضمن دورة عرض (render pass) واحدة، وتُمسح في نهاية ذلك الطلب؛ بينما تحتفظ Data Cache بنتائج `fetch()` عبر الطلبات بل وحتى عبر عمليات النشر (deployments) إلى أن يتم إبطالها (revalidate) صراحة."
+  },
+  {
+    "question": "متى يجب استخدام `revalidateTag` بدلاً من `revalidatePath`؟",
+    "answer": "عندما تظهر نفس البيانات الأساسية في أكثر من مسار واحد — فوسم عملية الجلب مرة واحدة واستدعاء `revalidateTag` يُبطلها في كل مكان، بينما `revalidatePath` يتطلب استدعاءً واحدًا لكل مسار متأثر."
+  },
+  {
+    "question": "ما الذي يتسبب في تحوّل مسار من العرض الثابت (static) إلى الديناميكي (dynamic)؟",
+    "answer": "قراءة أي بيانات خاصة بالطلب — مثل `cookies()`، أو `headers()`، أو `searchParams`، أو استدعاء `fetch` باستخدام `cache: \"no-store\"` — يجبر Next.js على عرض ذلك المسار من جديد في كل طلب بدلاً من تقديم HTML ثابت مخزّن مؤقتًا."
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why can't global CSS be imported inside a random nested component?",
+    "answer": "Next.js restricts global stylesheet imports to top-level files (like the root layout) because global CSS affects the whole page — allowing it anywhere would make style application unpredictable and hard to reason about."
+  },
+  {
+    "question": "What problem does `next/font` solve that a traditional Google Fonts `<link>` tag doesn't?",
+    "answer": "`next/font` downloads and self-hosts the font at build time, avoiding a runtime network request to an external server and eliminating the layout shift that happens when a fallback font is swapped for the real one after it loads."
+  }
+]

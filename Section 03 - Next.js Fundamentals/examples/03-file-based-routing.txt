@@ -1,0 +1,13 @@
+Folder structure → URL mapping (App Router)
+
+app/
+├── page.tsx            →  /
+├── about/
+│   └── page.tsx         →  /about
+└── blog/
+    ├── page.tsx          →  /blog
+    └── [slug]/
+        └── page.tsx       →  /blog/:slug
+
+Only files named exactly "page.tsx" (or .jsx/.js) become routes.
+Any other file in a route folder (components, utils) is NOT exposed as a URL.

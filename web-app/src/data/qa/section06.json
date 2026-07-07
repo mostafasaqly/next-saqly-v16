@@ -1,0 +1,14 @@
+[
+  {
+    "question": "Why can't you pass a function as a prop from a Server Component to a Client Component?",
+    "answer": "Server-to-client props are serialized and sent across the network boundary as part of the React payload; functions have no serializable representation, so only plain data (strings, numbers, objects, arrays) can cross that boundary."
+  },
+  {
+    "question": "Why is it still fine to render a Server Component as `children` of a Client Component?",
+    "answer": "Because the Server Component is already rendered to its output on the server before being passed down — the Client Component just receives the resulting markup as `children`, not the component itself needing to run in the browser."
+  },
+  {
+    "question": "What's wrong with adding `\"use client\"` to the top of `app/page.tsx` just because one button needs `onClick`?",
+    "answer": "It forces the entire page and everything it imports into the client bundle, discarding the zero-JS benefit of Server Components for all the surrounding static content — the fix is to extract just the interactive piece into its own small Client Component."
+  }
+]

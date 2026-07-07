@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why does every Server Action in this project call `revalidatePath(\"/tasks\")` after its mutation?",
+    "answer": "Because the tasks list page is statically cached by default — without revalidating, a create/update/delete would succeed in the database but the list page would keep showing stale cached data until the next natural revalidation window."
+  },
+  {
+    "question": "Why use `.bind(null, task.id)` on the `updateTask` action inside the edit form?",
+    "answer": "It creates a version of the action pre-filled with the specific task's `id`, so the generic `updateTask(id, prevState, formData)` function can be reused for every task while `useActionState` only needs to manage `(prevState, formData)`."
+  }
+]

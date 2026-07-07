@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why use Zustand with `persist` for the cart instead of React Context?",
+    "answer": "Context alone doesn't survive a page reload — its state resets to the provider's initial value. Zustand's `persist` middleware automatically syncs the store to `localStorage`, so the cart remains intact even after a full page refresh or browser restart."
+  },
+  {
+    "question": "Why does the checkout page redirect to `/login?next=/checkout` instead of just `/login`?",
+    "answer": "The `next` param lets the login flow know where to send the user back to after a successful login, so they land back on checkout instead of an arbitrary default page — preserving their original intent."
+  }
+]

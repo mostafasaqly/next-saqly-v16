@@ -1,0 +1,17 @@
+Migrating from middleware.ts to proxy.ts
+
+1. Rename the file:
+   middleware.ts  →  proxy.ts
+
+2. Rename the exported function:
+   export function middleware(request: NextRequest) { ... }
+   →
+   export function proxy(request: NextRequest) { ... }
+
+3. Everything else — NextResponse, NextRequest, the `matcher` config export,
+   cookies/headers access — stays exactly the same. Only the filename and
+   the exported function name changed.
+
+If you're on an older Next.js version without proxy.ts support, keep using
+middleware.ts until you upgrade — both are functionally equivalent, proxy.ts
+is simply the current, clearer naming going forward.

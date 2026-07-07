@@ -1,0 +1,10 @@
+[
+  {
+    "question": "When would you set `ssr: false` on a `next/dynamic` import?",
+    "answer": "When the component depends on browser-only APIs (like `window` or `document`) at module load time — rendering it on the server would throw, so disabling SSR defers it entirely to the client."
+  },
+  {
+    "question": "Why is `next/script`'s `strategy` prop important for third-party scripts?",
+    "answer": "Because an unmanaged `<script>` tag can block the browser from parsing and rendering the page while it downloads; choosing `afterInteractive` or `lazyOnload` lets the page become interactive first, improving perceived load performance."
+  }
+]

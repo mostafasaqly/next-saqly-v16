@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Why does Next.js 16 require Node.js 20.9 or later?",
+    "answer": "Next.js relies on modern Node.js runtime features (and Turbopack's requirements) that aren't available in older Node versions — running an older version causes the CLI or dev server to fail unpredictably."
+  },
+  {
+    "question": "What's the fastest fix when the dev server shows stale or broken UI after pulling new changes?",
+    "answer": "Delete the `.next` build cache folder and restart `npm run dev` — this forces Next.js to rebuild from scratch instead of reusing outdated cached output."
+  }
+]
