@@ -9,6 +9,46 @@ import { useLang } from "@/context/LangContext";
 import { strings } from "@/lib/i18n";
 import { sectionTitlesAr } from "@/lib/sectionTitles.ar";
 
+const otherCourses = [
+  {
+    name: "React 19",
+    href: "https://mostafasaqly.github.io/vue-saqly-v3/#section-1",
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0" fill="#61DAFB">
+        <circle cx="12" cy="12" r="2.2" />
+        <g fill="none" stroke="#61DAFB" strokeWidth="1">
+          <ellipse cx="12" cy="12" rx="10" ry="4.2" />
+          <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)" />
+          <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)" />
+        </g>
+      </svg>
+    ),
+  },
+  {
+    name: "Angular 22",
+    href: "https://mostafasaqly.github.io/angular-saqly-v22/section/1",
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0">
+        <path fill="#DD0031" d="M12 1.5 2 5l1.5 13L12 22.5 20.5 18 22 5 12 1.5Z" />
+        <path
+          fill="#fff"
+          d="M12 3.6 10.5 7h3L12 3.6ZM12 3.6v15.9l6.5-3.6L20 5.6 12 3.6ZM9 14.5h6l-1-2.5H10l-1 2.5Zm.6-1.5H12l1.4-3.5L9.6 13Z"
+        />
+      </svg>
+    ),
+  },
+  {
+    name: "Vue 3",
+    href: "https://mostafasaqly.github.io/vue-saqly-v3/#section-1",
+    icon: (
+      <svg viewBox="0 0 24 24" className="h-5 w-5 shrink-0">
+        <path fill="#41B883" d="M14 2 12 5.5 10 2H2l10 17L22 2h-8Z" />
+        <path fill="#35495E" d="M14 2 12 5.5 10 2H6.5l5.5 9.5L17.5 2H14Z" />
+      </svg>
+    ),
+  },
+];
+
 export default function Sidebar({
   sections,
   isOpen,
@@ -43,6 +83,21 @@ export default function Sidebar({
       >
         <div className="mb-4 px-2 text-lg font-semibold text-neutral-900 dark:text-white">
           {t.courseTitle}
+        </div>
+
+        <div className="mb-4 flex items-center gap-3 px-2">
+          {otherCourses.map((course) => (
+            <a
+              key={course.name}
+              href={course.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={course.name}
+              className="flex h-8 w-8 items-center justify-center rounded-md text-neutral-500 transition-colors hover:bg-neutral-200 dark:hover:bg-neutral-800"
+            >
+              {course.icon}
+            </a>
+          ))}
         </div>
 
         <div className="mb-4 px-2">
